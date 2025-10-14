@@ -1,0 +1,92 @@
+# YAML Rules to Write YAML Script
+- YAML - Yaml Ain't Markup Language - Used feed the data to system
+1. File extension should be .yml or .yaml - Ex: Test.yml
+2. there is no mandatory of mentioning special symbols or line of code to specify this is YAML Config
+3. 3 dots (...) specifies start of YAML Script and 3 Hyphens (---) used to specify End of YAML config
+4. if you are going with multiple cofig in single uss Hyphens to divide them
+  Ex: ...
+      config-1
+      ---
+      config-2
+5. THe data is represented in pairs(key-value), Key shouldn't empty
+6. Key's should be always unique in same indentation on same block.
+7. Indentation is used represent data - Indentation is 2 SPaces
+8. Hash Tag (#) is used towrite comments
+
+# YAML Data Types:
+1. Scalar:
+  i. String: text enclosed in single or double quotes Ex: "hello world"
+  ii. Numbers: Integers and Floating Ex: 23, 25.5
+  iii. Boolean: true/false - Ex: Is_Student: true
+  iv. Null: null or ~ - Ex: isMarried: null
+2. Sequence/Array
+  - list of items, represented by dash(-) followed by space, 
+    Ex: games:
+          - chess
+          - carom
+  - list of items enclosed in squre braces separated by coma- Ex: fruits: [banana, mango, cherry, berry]
+3. Mapping/Dictionary:
+  - key-value pairs separated by colon followed by space - Ex: name: murali
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Example: Collecting Movies Data
+Tollywood:
+  actor1:
+    name: Ali    ----> dictionary   ----> Toolywood.actor1.name
+    age: 55       ----> number
+    Height: 5.7   -----> floating
+    isMarried: true  ---> boolean
+    remunaration: null  ---> Null
+    no_movies: "acted as hero in 50+ movies"   --> string
+    blockbusters:     -----> Array
+      - Yamaleela
+      - xyz
+  actor2:
+    name: Ali    ----> dictionary  ----> Toolywood.actor2.name
+    age: 55       ----> number
+    Height: 5.7   -----> floating
+    isMarried: true  ---> boolean
+    remunaration: null  ---> Null
+    no_movies: "acted as hero in 50+ movies"   --> string
+    blockbusters:     -----> Array
+      - Yamaleela
+      - xyz
+---
+Tollywood:
+  actress:
+    name: Ali    ----> dictionary   ----> Toolywood.actor1.name
+    age: 55       ----> number
+    Height: 5.7   -----> floating
+    isMarried: true  ---> boolean
+    remunaration: null  ---> Null
+    no_movies: "acted as hero in 50+ movies"   --> string
+    blockbusters:     -----> Array
+      - Yamaleela
+      - xyz
+
+
+####################################
+
+String Types:
+1. normal string:
+  Ex: jobDescription: "Req 3 years of exp cloud devops engg. should have hands-on exp with aws cloud. should be strong in docker and github actions."
+      Output: Req 3 years of exp cloud devops engg. should have hands-on exp with aws cloud. should be strong in docker and github actions.
+2. literal block string (|):
+     Ex: jobDescription: |
+           Req 3 years of exp cloud devops engg. 
+           should have hands-on exp with aws cloud. 
+           should be strong in docker and github actions.
+       Output: 
+           Req 3 years of exp cloud devops engg. 
+           should have hands-on exp with aws cloud. 
+           should be strong in docker and github actions.
+
+3. folded block string (>)
+     Ex: jobDescription: >
+           Req 3 years of exp cloud devops engg. 
+           should have hands-on exp with aws cloud. 
+           should be strong in docker and github actions.
+
+      Output: Req 3 years of exp cloud devops engg. should have hands-on exp with aws cloud. should be strong in docker and github actions.
+
