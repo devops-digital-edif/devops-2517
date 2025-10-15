@@ -1,5 +1,6 @@
 name: First Workflow
-on: push  # when code is pushed it will trigger
+on: workflow_dispatch
+  #- push  # when code is pushed it will trigger
 jobs:
   hello:
     runs-on: ubuntu-latest
