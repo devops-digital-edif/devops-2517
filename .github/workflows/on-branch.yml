@@ -1,0 +1,12 @@
+name: On Branch
+on:
+  push:
+    branches:
+      - main
+      - dev
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet
+        run: echo "welcome to push trigger"
