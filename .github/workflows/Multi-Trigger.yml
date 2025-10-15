@@ -1,6 +1,6 @@
 name: Multiple Trigger Workflow
 on:
-  - push
+#  - push
   - workflow_dispatch
 jobs:
   job1:
