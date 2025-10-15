@@ -1,8 +1,10 @@
 name: First Workflow
-on: push
+on: push  # when code is pushed it will trigger
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: greet
+        run: echo "welcome to Github Actions"      
+      - name: Hello
         run: echo "welcome to Github Actions"
