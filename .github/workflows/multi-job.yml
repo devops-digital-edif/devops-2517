@@ -1,0 +1,23 @@
+name: Multi Jobs
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build App
+        run: echo "Application is Build"
+      - name: clone code
+        uses: actions/checkout@v5.0.0
+      - name: check code
+        run: ls
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy App
+        run: echo "Deployment done"
+      - name: check code
+        run: ls
+
+
+  
+      
