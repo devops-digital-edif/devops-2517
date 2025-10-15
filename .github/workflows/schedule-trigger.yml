@@ -1,0 +1,19 @@
+name: Scheduled Runs
+on:
+  schedule:
+    - cron: '0 5 1 * MON'  # Min Hours DOM Mon DOW - 10:30AM according Indian Time
+    - cron: '40 4 * * *'   # IST 10:10AM
+    # IST=UST+5:30h
+    # Min -> 0 to 59
+    # Hours -> 0 to 23
+    # Day Of Month -> 1 to 31
+    # Month -> 1 to 12 or JAN to DEC
+    # Day of Week -> 0 to 7(0&7-SUN) or SUN to SAT
+    # star/astrick(*) -> all/any value
+    # Ex: IST- 10:10AM every day :- UST= IST-5:30 = 10:10-5:30= 4:40min
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: backup
+        run: echo "taking database backup"
