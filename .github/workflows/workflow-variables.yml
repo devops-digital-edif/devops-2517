@@ -1,5 +1,7 @@
 name: Workflow Variables
 on: workflow_dispatch
+env:
+  EMAIL: "murali@gmail.com"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,7 +9,7 @@ jobs:
       TRAINER: "Murali Krishna"
     steps: 
       - name: calling variable
-        run: echo "hello $TRAINER"
+        run: echo "hello $TRAINER, $EMAIL"
       - name: calling step variable
         run: echo "Welcome to $CLASS, the trainer is $TRAINER"
         env:
@@ -18,4 +20,4 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: calling variable
-        run: echo "hello $TRAINER"
+        run: echo "hello $TRAINER, $EMAIL"
