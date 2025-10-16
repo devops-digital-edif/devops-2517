@@ -1,20 +1,23 @@
 name: Workflow Variables
 on: workflow_dispatch
-env:
+env:     # universal variable can be called in any job
   EMAIL: "murali@gmail.com"
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
+    env:    # Job level variable can be used with in this job only
       TRAINER: "Murali Krishna"
     steps: 
       - name: calling variable
         run: echo "hello $TRAINER, $EMAIL"
+      - name: sleep 10sec
+        run: sleep 10
       - name: calling step variable
-        run: echo "Welcome to $CLASS, the trainer is $TRAINER"
-        env:
+        run: echo "Welcome to $CLASS, the trainer is $TRAINER
+        env:   # step level varible can be used in this step only
           CLASS: "devops-2517"
       - name: calling step
+        if: success()
         run: echo "Welcome to $CLASS, the trainer is $TRAINER"
   deploy:
     runs-on: ubuntu-latest
