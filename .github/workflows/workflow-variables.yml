@@ -1,8 +1,10 @@
 name: Workflow Variables
-on: workflow_call
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TRAINER: "Murali Krishna"
     steps: 
       - name: calling variable
-        run: echo "hello world"
+        run: echo "hello $TRAINER"
