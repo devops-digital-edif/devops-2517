@@ -8,3 +8,5 @@ jobs:
         run: echo "hello $TRAINER, $EMAIL"
       - name: Repo Variable and Secret
         run: echo "use this username ${{vars.USERNAME}} and password ${{secrets.PASSWORD}}"
+      - name: default variables
+        run: echo "this workflow run number $GITHUB_RUN_NUMBER"
