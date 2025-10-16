@@ -8,3 +8,7 @@ jobs:
     steps: 
       - name: calling variable
         run: echo "hello $TRAINER"
+      - name: calling step variable
+        run: echo "Welcome to $CLASS, the trainer is $TRAINER"
+        env:
+          CLASS: "devops-2517"
