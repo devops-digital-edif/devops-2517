@@ -14,3 +14,8 @@ jobs:
           CLASS: "devops-2517"
       - name: calling step
         run: echo "Welcome to $CLASS, the trainer is $TRAINER"
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: calling variable
+        run: echo "hello $TRAINER"
