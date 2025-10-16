@@ -13,7 +13,7 @@ jobs:
       - name: sleep 10sec
         run: sleep 10
       - name: calling step variable
-        run: echo "Welcome to $CLASS, the trainer is $TRAINER"
+        run: echo "Welcome to $CLASS, the trainer is $TRAINER
         env:   # step level varible can be used in this step only
           CLASS: "devops-2517"
       - name: calling step
