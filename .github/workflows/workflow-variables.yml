@@ -12,3 +12,5 @@ jobs:
         run: echo "Welcome to $CLASS, the trainer is $TRAINER"
         env:
           CLASS: "devops-2517"
+      - name: calling step
+        run: echo "Welcome to $CLASS, the trainer is $TRAINER"
