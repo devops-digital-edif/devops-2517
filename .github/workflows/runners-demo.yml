@@ -13,3 +13,16 @@ jobs:
     steps:
       - name: list files
         run: ls
+#######################
+  build1:
+    runs-on: self-hosted  # Runner details, github manaed runner
+    steps:
+      - name: Build on Ubuntu Server
+        run: echo "Build is done" > build.txt
+      - name: list files
+        run: ls
+  test1:
+    runs-on: build # Ubuntu, Windows, Macos
+    steps:
+      - name: list files
+        run: ls
