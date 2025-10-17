@@ -1,28 +1,40 @@
 name: Renners Demo
 on: workflow_dispatch
 jobs:
+  notification:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Slack Notification
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{secrets.SLACK_WEBHOOK_URL}}
+          webhook-type: incoming-webhook
+          payload: |
+            channel: "demo-slack"
+            text: "Application build started"
   build:
-    runs-on: ubuntu-latest  # Runner details, github manaed runner
-    steps:
-      - name: Build on Ubuntu Server
-        run: echo "Build is done" > build.txt
-      - name: list files
-        run: ls
-  test:
-    runs-on: ubuntu-latest # Ubuntu, Windows, Macos
-    steps:
-      - name: list files
-        run: ls
-#######################
-  build1:
+    needs: notification
     runs-on: self-hosted  # Runner details, github manaed runner
     steps:
       - name: Build on Ubuntu Server
         run: echo "Build is done" > build.txt
       - name: list files
         run: ls
-  test1:
+  test:
+    needs: build
     runs-on: build # Ubuntu, Windows, Macos
     steps:
       - name: list files
         run: ls
+  feedback:
+    needs: test
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Slack Notification
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{secrets.SLACK_WEBHOOK_URL}}
+          webhook-type: incoming-webhook
+          payload: |
+            channel: "demo-slack"
+            text: "Application build and Test Completed"
