@@ -1,0 +1,13 @@
+name: Renners Demo
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Runner details, github manaed runner
+    steps:
+      - name: Build on Ubuntu Server
+        run: echo "Build is done"
+  test:
+    runs-on: windows-latest # Ubuntu, Windows, Macos
+    steps:
+      - name: Testing in Windows Server
+        run: echo "Test is done"
