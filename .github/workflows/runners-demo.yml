@@ -5,9 +5,11 @@ jobs:
     runs-on: ubuntu-latest  # Runner details, github manaed runner
     steps:
       - name: Build on Ubuntu Server
-        run: echo "Build is done"
+        run: echo "Build is done" > build.txt
+      - name: list files
+        run: ls
   test:
-    runs-on: windows-latest # Ubuntu, Windows, Macos
+    runs-on: ubuntu-latest # Ubuntu, Windows, Macos
     steps:
-      - name: Testing in Windows Server
-        run: echo "Test is done"
+      - name: list files
+        run: ls
